@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang=''>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="../styles.css">
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+   <script src="https://openseadragon.github.io/openseadragon/openseadragon.min.js" type="text/javascript"></script>
+   <title>Open Sea Dragon -Link </title>
+</head>
+<body>
+
+<div id='cssmenu'>
+<ul>
+   <li><a href='/index.html'>Home</a></li>
+   <li><a  href='../menu/1.html'>Open Sea Dragon / Deep Zoom Composer</a></li>
+   <li class='active'><a href='../menu/2.html'>Open Sea Dragon / Link</a></li>
+   <li><a href='../menu/3.html'>Croppa zoom slider</a></li>
+   <li><a href='../menu/4.html'>recogito</a></li>
+</ul>
+</div>
+<p>Exemple 2:</p>
+<div >
+<div id="seadragon-viewer" class="openseadragon1" style="width: 400px; height: 400px;"></div>
+<script type="text/javascript">
+var viewer = OpenSeadragon({
+    id: "seadragon-viewer",
+    prefixUrl: "//openseadragon.github.io/openseadragon/images/",
+    tileSources: [{
+            type: 'legacy-image-pyramid',
+            levels: [{
+                url: 'http://nhdarchives.pbworks.com/f/1349103580/NHD%20and%20Chronicling%20America.jpg',
+                width:  782,
+                height: 626
+            }]
+        },{
+            type: 'legacy-image-pyramid',
+            levels: [{
+                url: 'https://i.pinimg.com/originals/fb/79/28/fb792845b4ce90d3c6bd096df5aaaac7.png',
+                width:  384,
+                height: 626
+            }]
+        },{
+            type: 'legacy-image-pyramid',
+            levels: [{
+                url: 'http://gunrightswatch.com/clientuploads/blog/boston-herald-newspaper-1209-1980-john-lennon-murder.jpg',
+                width:  748,
+                height: 383
+            }]
+        },{
+            type: 'legacy-image-pyramid',
+            levels: [{
+                url: 'https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg',
+                width:  1999,
+                height: 1376
+            }]
+        },{
+            type: 'legacy-image-pyramid',
+            levels: [{
+                url: 'https://images.pexels.com/photos/641314/pexels-photo-641314.jpeg',
+                width:  3072,
+                height: 2048
+            }]
+        },{
+            type: 'legacy-image-pyramid',
+            levels: [{
+                url: 'http://qcostarica.com/wp-content/uploads/2014/06/chris-usatodayjune11.jpg',
+                width:  599,
+                height: 626
+            }]
+        }],
+
+        sequenceMode: true, //next page, prev page
+        showReferenceStrip: true,
+        //referenceStripScroll: 'vertical', //Vertical Scrolling Image Reference Strip
+        // showRotationControl: true, //button rotate
+        showNavigator: true,
+        maxZoomPixelRatio: 5.0,
+        controlsFadeDelay: 3500,
+        homeFillsViewer: false
+});
+
+// viewer.addHandler('update-viewport', function() {
+//    ....
+// });
+
+var elt1 = document.createElement("div");
+elt1.id = "overlay1";
+elt1.className = "highlight1";
+viewer.addOverlay({
+    element: elt1,
+    location: new OpenSeadragon.Rect(0, 0.2, 0.19, 0.6) // left, top, width, height
+});
+
+
+var elt2 = document.createElement("div");
+elt2.id = "overlay2";
+elt2.className = "highlight2";
+viewer.addOverlay({
+    element: elt2,
+    location: new OpenSeadragon.Rect(0.195, 0.2, 0.155, 0.35) // left, top, width, height
+});
+
+var elt3 = document.createElement("div");
+elt3.id = "overlay2";
+elt3.className = "highlight3";
+viewer.addOverlay({
+    element: elt3,
+    location: new OpenSeadragon.Rect(0.357, 0.25, 0.16, 0.24) // left, top, width, height
+});
+
+</script>
+</div>
+</body>
+<html>

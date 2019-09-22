@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang=''>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="../styles.css">
+   <link rel="stylesheet" href="https://unpkg.com/vue-croppa/dist/vue-croppa.min.css">
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js" type="text/javascript"></script>
+   <script src="https://unpkg.com/vue-croppa/dist/vue-croppa.min.js" type="text/javascript"></script>
+
+
+   <title>Open Sea Dragon</title>
+</head>
+<body>
+
+<div id='cssmenu'>
+<ul>
+   <li><a href='/index.html'>Home</a></li>
+   <li><a href='../menu/1.html'>Open Sea Dragon / Deep Zoom Composer</a></li>
+   <li><a href='../menu/2.html'>Open Sea Dragon / Link</a></li>
+   <li class='active'><a href='../menu/3.html'>Croppa zoom slider</a></li>
+   <li><a href='../menu/4.html'>recogito</a></li>
+</ul>
+</div>
+Exemple 3:
+<div id="app">
+    <h2>Limited Zoom</h2>
+    <h3>with zooming Slider</h3>
+    <input type="range" @input="onSliderChange" :min="sliderMin" :max="sliderMax" step=".001" v-model="sliderVal"> {{sliderVal}}
+    <br><br>
+    <croppa v-model="croppa" @new-image-drawn="onNewImage" @zoom="onZoom">
+    </croppa>
+  </div>
+
+  <div id="app1">
+    <h2>No Limit Zoom</h2>
+    
+    <croppa v-model="croppa" @new-image-drawn="onNewImage" @zoom="onZoom">
+    </croppa>
+  </div>
+
+<script type="text/javascript">
+Vue.use(Croppa)  
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    croppa: {},
+    sliderVal: 0,
+    sliderMin: 0,
+    sliderMax: 0
+  },
+  
+  methods: {
+    onNewImage() {
+      this.sliderVal = this.croppa.scaleRatio
+      this.sliderMin = this.croppa.scaleRatio / 2
+      this.sliderMax = this.croppa.scaleRatio * 2
+    },
+    
+    onSliderChange(evt) {
+      var increment = evt.target.value
+      this.croppa.scaleRatio = +increment
+    },
+    
+    onZoom() {
+      // To prevent zooming out of range when using scrolling to zoom
+     if (this.sliderMax && this.croppa.scaleRatio >= this.sliderMax) {
+       this.croppa.scaleRatio = this.sliderMax
+     } else if (this.sliderMin && this.croppa.scaleRatio <= this.sliderMin) {
+       this.croppa.scaleRatio = this.sliderMin
+     }
+
+      this.sliderVal = this.croppa.scaleRatio
+    }
+  }
+})
+</script>
+
+<script type="text/javascript">
+    Vue.use(Croppa)  
+    
+    var app1 = new Vue({
+      el: '#app1',
+      data: {
+        croppa: {},
+        sliderVal: 0,
+        sliderMin: 0,
+        sliderMax: 0
+      },
+      
+      methods: {
+        onNewImage() {
+          this.sliderVal = this.croppa.scaleRatio
+          this.sliderMin = this.croppa.scaleRatio / 2
+          this.sliderMax = this.croppa.scaleRatio * 2
+        },
+        
+        onSliderChange(evt) {
+          var increment = evt.target.value
+          this.croppa.scaleRatio = +increment
+        },
+        
+        onZoom() {
+          // To prevent zooming out of range when using scrolling to zoom
+         /* if (this.sliderMax && this.croppa.scaleRatio >= this.sliderMax) {
+           this.croppa.scaleRatio = this.sliderMax
+         } else if (this.sliderMin && this.croppa.scaleRatio <= this.sliderMin) {
+           this.croppa.scaleRatio = this.sliderMin
+         }
+    
+          this.sliderVal = this.croppa.scaleRatio */
+        }
+      }
+    })
+    </script>
+
+
+</body>
+<html>
