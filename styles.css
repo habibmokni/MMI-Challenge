@@ -95,3 +95,12 @@
 #cssmenu > ul > li > a:hover:after {
   background: #47c9af;
 }
+h1{
+  font-weight: bold;
+  color: #47c9af;
+  font-size: 32px;
+}
+
+h3{
+  color: #6ba798;
+}
