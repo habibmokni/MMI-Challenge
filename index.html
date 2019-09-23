@@ -155,32 +155,12 @@
                         <li><a href='http://openseadragon.github.io/examples/multi-image/'>Full Multi-Image</a></li>
                     </ul>
                     <hr>
-                    <h2>Deep Zoom Composer</h2>
-                    <p class="lead">Deep Zoom ist eine Open-Source-Technologie, die von Microsoft bereitgestellt wird
-                        und Teil von
-                        Silverlight ist, mit der Benutzer ein großes Bild mit hoher Auflösung oder eine große Sammlung
-                        von Bildern
-                        schwenken und vergrößern können.
-                        Deep Zoom Composer Nehmen Sie Ihr Bild und geben Sie Ihnen die Bildpyramide.
-                        Es reduziert die für das erstmalige Laden erforderliche Zeit, indem nur der angezeigte Bereich
-                        und / oder
-                        nur die Auflösung heruntergeladen werden, in der er angezeigt wird. Nachfolgende Regionen werden
-                        heruntergeladen, während der Benutzer darauf schwenkt (oder hinein zoomt).</p>
-                    <q>Um die Bilder zu sehen und zoomen und erkunden zu können, benötigen Sie OpenSeaDragon</q>
-                    <ul class="lead">
-                        <li><a href='https://habibmokni.github.io/MMI-Challenge/menu/1.html'>Hier ist ein Beispiel</a>
-                        </li>
-                        <li><a href='https://www.microsoft.com/en-us/download/details.aspx?id=24819de'>Download Link</a>
-                        </li>
-                    </ul>
-                    <hr>
-
                     <div>
                         <div id="seadragon-viewer" class="openseadragon1" style="width: 400px; height: 400px;"></div>
                         <script type="text/javascript">
                             var viewer = OpenSeadragon({
                                 id: "seadragon-viewer",
-                                prefixUrl: "//openseadragon.github.io/openseadragon/images/",
+                                prefixUrl: "./openseadragon/images/",
                                 tileSources: [{
                                     type: 'legacy-image-pyramid',
                                     levels: [{
@@ -266,9 +246,6 @@
 
                         </script>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -283,19 +260,22 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h2>Deep Zoom Composer</h2>
-                    <p class="lead">Croppa ist ein einfacher und benutzerfreundlicher Bildbeschneider, der auch
-                        Zoom-Funktionen
-                        bietet. </p>
-                    <h3>Zooming-Features</h3>
+                    <p class="lead">Deep Zoom ist eine Open-Source-Technologie, die von Microsoft bereitgestellt wird
+                        und Teil von
+                        Silverlight ist, mit der Benutzer ein großes Bild mit hoher Auflösung oder eine große Sammlung
+                        von Bildern
+                        schwenken und vergrößern können.
+                        Deep Zoom Composer Nehmen Sie Ihr Bild und geben Sie Ihnen die Bildpyramide.
+                        Es reduziert die für das erstmalige Laden erforderliche Zeit, indem nur der angezeigte Bereich
+                        und / oder
+                        nur die Auflösung heruntergeladen werden, in der er angezeigt wird. Nachfolgende Regionen werden
+                        heruntergeladen, während der Benutzer darauf schwenkt (oder hinein zoomt).</p>
+                    <q>Um die Bilder zu sehen und zoomen und erkunden zu können, benötigen Sie OpenSeaDragon</q>
                     <ul class="lead">
-                        <li>Zooming control</a></li>
-                        <li>Drag & Drop Pictures</a></li>
-                        <li>Speed</a></li>
-                        <li>No Limit zooming</li>
+                        <li><a href='https://www.microsoft.com/en-us/download/details.aspx?id=24819de'>Download Link</a>
+                        </li>
                     </ul>
-                    <ul class="lead">
-                        <li><a href='https://github.com/zhanziyang/vue-croppa'>Git-Repo-Link</a></li>
-                    </ul>
+                    <hr>
                     <p class="lead">Ein Beispiel für den Einsatz von Deep Zoom Composer und OpenSeaDragon. <br>
                         Unter Untersuchen-> Netzwerk, um zu sehen, wie es die Tile-Bilder lädt.</p>
                     <div id="openseadragon1" style="width: 400px; height: 400px;"></div>
